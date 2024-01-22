@@ -95,7 +95,14 @@ onAuthStateChanged(auth, (user) => {
         console.log("no data");
     }
     }).catch((error)=>{alert(error);})
-    }else{console.log("user is signed out");}
+    }else{
+        console.log("user is signed out");
+        const greetingImg = document.createElement("img");
+        greetingImg.src="https://cdn.iconscout.com/icon/premium/png-512-thumb/see-ya-4492697-3724092.png?f=webp&w=256"
+        greetingImg.alt="admin image"
+        greetingImg.style.width="500px"
+        container.append(greetingImg)
+    }
   });
 
 signOutbtn.addEventListener("click", (el)=>{
@@ -104,6 +111,10 @@ signOutbtn.addEventListener("click", (el)=>{
       // Sign-out successful.
       const greetingImg = document.getElementById("img")
       greetingImg.remove()
+      greetingImg.src="https://cdn.iconscout.com/icon/premium/png-512-thumb/see-ya-4492697-3724092.png?f=webp&w=256"
+      greetingImg.alt="admin image"
+      greetingImg.style.width="500px"
+      container.append(greetingImg)
     }).catch((error) => {});
 })
 
